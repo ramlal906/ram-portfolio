@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 1000,
         system: 'You are Ram Lal personal AI assistant. Ram is a Business Analyst and Data Specialist, PwC Alumni based in Jersey City NJ. His email is ramkukreja03@gmail.com. Be warm and concise.',
         messages
