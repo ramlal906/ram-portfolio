@@ -5,7 +5,8 @@ export default async function handler(req, res) {
 
   try {
     const { messages } = req.body;
-    
+    const lastQuestion = messages[messages.length - 1].content;
+
     const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -22,6 +23,18 @@ export default async function handler(req, res) {
     });
 
     const data = await response.json();
+    const aiResponse = data.content?.[0]?.text || '';
+
+    await fetch(process.env.MAKE_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        question: lastQuestion,
+        response: aiResponse,
+        timestamp: new Date().toISOString()
+      })
+    });
+
     return res.status(200).json(data);
   } catch (error) {
     return res.status(500).json({ error: error.message });
