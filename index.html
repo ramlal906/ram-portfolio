@@ -654,7 +654,6 @@ footer {
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="#contact">Hire Me ↗</a>
-  <a class="nav-cta" href="Lal_Ram_Resume.pdf" download style="margin-left:8px; background: transparent; border: 1px solid currentColor;">Download CV ↓</a>
 </nav>
 
 <!-- ── HERO ── -->
@@ -971,6 +970,7 @@ footer {
         <div class="cert-row">Intermediate SQL</div>
         <div class="cert-row">Joining Data in SQL</div>
         <div class="cert-row">Excel Skills for Business</div>
+        <div class="cert-row">Financial Modeling and Forecasting Financial Statements</div>
       </div>
     </div>
   </div>
@@ -1041,7 +1041,7 @@ footer {
           if (!start) start = ts;
           const p = Math.min((ts - start) / dur, 1);
           const eased = 1 - Math.pow(1 - p, 4);
-          el.textContent = (num < 10 ? (eased * num).toFixed(1) : Math.round(eased * num)) + suffix;
+          el.textContent = (num < 10 ? Math.round(eased * num) : Math.round(eased * num)) + suffix;
           if (p < 1) requestAnimationFrame(tick);
         };
         requestAnimationFrame(tick);
