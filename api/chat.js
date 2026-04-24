@@ -23,6 +23,7 @@ Ram Lal is a Business Analyst and Data Specialist based in Jersey City, NJ. He i
 - Intermediate SQL
 - Joining Data in SQL
 - Excel Skills for Business
+- Financial Modeling and Forecasting Financial Statements
 
 === KEY IMPACT METRICS ===
 - 99% Data Migration Accuracy at PwC
